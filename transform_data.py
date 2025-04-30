@@ -22,6 +22,35 @@ def transformation(x: list,y: list ,z: list,mappings: list)-> list:
 
     return three_sets
 
+def plot_VC3(VC3:list,title="VC3"):
+    # Create figure
+    fig = go.Figure()
+
+    # Add one trace per tuple
+    for triplet in VC3:
+        fig.add_trace(go.Scatter(
+            x=["First Set", "Second Set", "Third Set"],
+            y=list(triplet),
+            mode="lines+markers+text",
+            name=str(triplet),
+            text=[str(triplet[0]), str(triplet[1]), str(triplet[2])],
+            textposition="top center"
+        ))
+
+    # Update layout for visual style
+    fig.update_layout(
+        title=title,
+        xaxis_title="Mapping",
+        yaxis_title="Value",
+        xaxis=dict(type='category'),
+        plot_bgcolor="#f0f6ff",
+        legend_title_text="(First, Second, Third)",
+        width=1000,
+        height=800
+    )
+    fig.show()
+
+
 if  __name__ == "__main__":
     for sys.argv[1] in os.listdir(os.getcwd()):
         if sys.argv[1].startswith("input") and sys.argv[1].endswith(".csv"):
@@ -34,4 +63,10 @@ if  __name__ == "__main__":
     for i in list(mappings):
         u.append(ast.literal_eval(i))
         
-    print(transformation(list(x),list(y),list(z),u))
+    VC3=transformation(list(x),list(y),list(z),u) 
+    print(VC3)
+    plot_VC3(VC3)
+    
+    data={"Triplets":VC3}    
+    ddf = pd.DataFrame(data)
+    ddf.to_csv("VC3.csv", index=False)
