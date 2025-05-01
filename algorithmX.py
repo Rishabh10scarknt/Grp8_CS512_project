@@ -52,6 +52,7 @@ def plot_VC3(VC3:list,title="VC3"):
             textposition="top center"
         ))
 
+
     # Update layout for visual style
     fig.update_layout(
         title=title,
@@ -97,5 +98,13 @@ if __name__=="__main__":
     
     #print solution
     print(last)
-    
+    df = pd.DataFrame(last, columns=["Boy", "Girl", "Pet"])
+    df["Girl"] -= len(df["Boy"])
+    df["Pet"] -= len(df["Girl"]) + len(df["Boy"])
+    df = df.astype(str)
+    df["Boy"] = "b" + df["Boy"]
+    df["Girl"] = "g" + df["Girl"]
+    df["Pet"] = "p" + df["Pet"]
+    df.to_csv("solution.csv", index=False)
+
     plot_VC3(last,title="Exact VC3")

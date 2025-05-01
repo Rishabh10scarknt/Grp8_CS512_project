@@ -2,6 +2,7 @@ import os
 import sys
 import ast
 import pandas as pd
+import plotly.graph_objects as go
 
 def transformation(x: list,y: list ,z: list,mappings: list)-> list:
     X = {}
