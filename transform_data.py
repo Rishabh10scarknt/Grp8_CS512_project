@@ -68,6 +68,6 @@ if  __name__ == "__main__":
     print(VC3)
     plot_VC3(VC3)
     
-    data={"Triplets":VC3}    
+    data={"Boy":[t[0] for t in VC3], "Girl":[t[1] for t in VC3], "Pet":[t[2] for t in VC3]}    
     ddf = pd.DataFrame(data)
     ddf.to_csv("VC3.csv", index=False)
