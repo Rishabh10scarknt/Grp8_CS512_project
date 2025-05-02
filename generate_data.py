@@ -21,7 +21,15 @@ def assign_symbols(set_length : int) -> list:
     return x,y,z
 
 def generate_mapping(set_length: int, iterations: int) -> list:
-   
+    """_summary_
+    Args:
+        set_length (int): lenghth of each set
+        iterations (int): Number of random mappings 
+    Returns:
+        sets and mappings
+    """
+   assert(set_length <=16)
+   assert(set_length <= 4096)
     # create a structured numpy array for the 3 sets 
     dt = np.dtype([("set1",(np.str_ , set_length)),("set2",(np.str_ ,set_length)),("set3",(np.str_ ,set_length))])
 
