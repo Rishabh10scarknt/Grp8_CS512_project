@@ -5,5 +5,7 @@ The source code is guided by the following procedure:
 3) Appoximate solution for the NP-complete VC3 by Algorithm X.
 4) Brute force solution to the problem for verifying 3)
 5) Backtracking to get the solution to the orginial 3D matching problem.
+
+
    
 
