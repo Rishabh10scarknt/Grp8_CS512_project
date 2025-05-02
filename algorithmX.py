@@ -71,10 +71,11 @@ if __name__=="__main__":
         if sys.argv[1].startswith("VC3") and sys.argv[1].endswith(".csv"):
             df = pd.read_csv(sys.argv[1])
     
-    t = df['Triplets'].dropna()   
-    VC3 = []
-    for i in list(t):
-        VC3.append(ast.literal_eval(i))
+    t1 = df["Boy"].dropna()
+    t2 = df["Girl"].dropna()
+    t3 = df["Pet"].dropna()  
+    
+    VC3 = list(zip(t1, t2, t3))
     
     # Step 1: Build Y
     Y = {}
