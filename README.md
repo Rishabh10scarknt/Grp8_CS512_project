@@ -4,7 +4,7 @@ The source code is guided by the following procedure:
 2) Further mappings amongst sets are transformed to a numeric set of triplets. ( The transformation must be polynomial in time)
 3) Appoximate solution for the NP-complete VC3 by Algorithm X.
 4) Brute force solution to the problem for verifying 3)
-5) Backtracking to get the solution to the orginial 3D matching problem.
+5) Backtracking to get the solution to the original 3D matching problem.
 
 
  For executing the code from scratch, follow these commands on terminal:
